@@ -1,6 +1,6 @@
 # Todos Tailwind
 
-A tailwind + react-query + typescript experiment
+A tailwind + react-query + typescript experiment [(see it live)](https://gallant-pike-f5fb05.netlify.app/)
 
 ## Getting started
 
