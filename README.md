@@ -1,3 +1,4 @@
+[![unit tests](https://github.com/vcarel/todos-tailwind/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/vcarel/todos-tailwind/actions/workflows/unit-tests.yml)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/728e10af-0045-4df2-b75b-193d9de7272d/deploy-status)](https://app.netlify.com/sites/gallant-pike-f5fb05/deploys)
 
 # Todos Tailwind
