@@ -112,49 +112,60 @@ const Todos = (): JSX.Element => {
 
   return (
     <>
-      <div className="bg-white sm:rounded-lg shadow overflow-hidden sm:mb-6 py-2 sm:py-0">
-        <label className="text-gray-600 ml-4 mr-4 sm:text-sm font-semibold" htmlFor="search">
-          Search
-        </label>
-        <div className="my-2 relative rounded-md shadow-sm inline-block">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <SearchIcon className="h-5 w-5 text-gray-400" />
+      <div className="bg-white sm:rounded-lg shadow overflow-hidden sm:mb-6 py-2">
+        <div className="my-2 whitespace-nowrap sm:inline">
+          <label
+            className="text-gray-600 ml-4 mr-4 font-semibold w-14 inline-block sm:w-auto sm:text-sm"
+            htmlFor="search"
+          >
+            Search
+          </label>
+          <div className="relative rounded-md shadow-sm inline-block">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <SearchIcon className="h-5 w-5 text-gray-400" />
+            </div>
+            <input
+              className="focus:ring-indigo-500 focus:border-indigo-500 block pl-10 sm:text-sm border-gray-300 rounded-md placeholder-gray-400 w-auto sm:w-48 md:w-64"
+              id="search"
+              placeholder="Keywords"
+              size={16}
+              type="search"
+              onChange={e => setSearch(e.target.value)}
+            />
           </div>
-          <input
-            className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md placeholder-gray-400"
-            id="search"
-            placeholder="Keywords"
-            type="search"
-            onChange={e => setSearch(e.target.value)}
-          />
         </div>
-        <label className="text-gray-600 ml-4 mr-4 sm:text-sm font-semibold" htmlFor="search">
-          Status
-        </label>
-        <ButtonGroup>
-          {/* Buttons use two handlers here: onClick for keyboard navigation, and onMouseDown for UI reactivity  */}
-          <ButtonGroup.Button
-            active={statusFilter === StatusFilter.all}
-            onClick={() => setStatusFilter(StatusFilter.all)}
-            onMouseDown={() => setStatusFilter(StatusFilter.all)}
+        <div className="my-2 whitespace-nowrap sm:inline sm:ml-2 md:ml-4">
+          <label
+            className="text-gray-600 ml-4 mr-4 font-semibold w-14 inline-block sm:w-auto sm:text-sm"
+            htmlFor="search"
           >
-            All
-          </ButtonGroup.Button>
-          <ButtonGroup.Button
-            active={statusFilter === StatusFilter.completed}
-            onClick={() => setStatusFilter(StatusFilter.completed)}
-            onMouseDown={() => setStatusFilter(StatusFilter.completed)}
-          >
-            Completed
-          </ButtonGroup.Button>
-          <ButtonGroup.Button
-            active={statusFilter === StatusFilter.todo}
-            onClick={() => setStatusFilter(StatusFilter.todo)}
-            onMouseDown={() => setStatusFilter(StatusFilter.todo)}
-          >
-            To do
-          </ButtonGroup.Button>
-        </ButtonGroup>
+            Status
+          </label>
+          <ButtonGroup>
+            {/* Buttons use two handlers here: onClick for keyboard navigation, and onMouseDown for UI reactivity  */}
+            <ButtonGroup.Button
+              active={statusFilter === StatusFilter.all}
+              onClick={() => setStatusFilter(StatusFilter.all)}
+              onMouseDown={() => setStatusFilter(StatusFilter.all)}
+            >
+              All
+            </ButtonGroup.Button>
+            <ButtonGroup.Button
+              active={statusFilter === StatusFilter.completed}
+              onClick={() => setStatusFilter(StatusFilter.completed)}
+              onMouseDown={() => setStatusFilter(StatusFilter.completed)}
+            >
+              Completed
+            </ButtonGroup.Button>
+            <ButtonGroup.Button
+              active={statusFilter === StatusFilter.todo}
+              onClick={() => setStatusFilter(StatusFilter.todo)}
+              onMouseDown={() => setStatusFilter(StatusFilter.todo)}
+            >
+              To do
+            </ButtonGroup.Button>
+          </ButtonGroup>
+        </div>
       </div>
 
       <div className="bg-white sm:rounded-lg shadow overflow-hidden min-h-96">
